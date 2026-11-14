@@ -1,10 +1,10 @@
 # MPI data exchange between two systems
 
 ## Academic Details:
-Student name: Vibhor Shukla
-Roll Number: 23115107
-Programme: CSE, Semester 7
-Institute: NIT Raipur
+Student name: Vibhor Shukla</br>
+Roll Number: 23115107</br>
+Programme: CSE, Semester 7</br>
+Institute: NIT Raipur</br>
 Subject: Distributed System
 
 ## 1. Assignment objective
