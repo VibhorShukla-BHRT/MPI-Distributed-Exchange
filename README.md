@@ -1,5 +1,12 @@
 # MPI data exchange between two systems
 
+## Academic Details:
+Student name: Vibhor Shukla
+Roll Number: 23115107
+Programme: CSE, Semester 7
+Institute: NIT Raipur
+Subject: Distributed System
+
 ## 1. Assignment objective
 
 This project demonstrates data exchange between two computer systems using the
