@@ -1,6 +1,7 @@
 #include <mpi.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 enum {
     SYSTEM_1_RANK = 0,
@@ -26,6 +27,23 @@ int main(int argc, char *argv[]) {
         MPI_Abort(MPI_COMM_WORLD, EXIT_FAILURE);
         return EXIT_FAILURE;
     }
+
+    /*
+     * Safe clock-skew demonstration: this changes only the timestamp printed
+     * by this program. It never changes a container or host system clock.
+     */
+    const int simulated_clock_offset_seconds =
+        (rank == SYSTEM_1_RANK) ? -300 : 180;
+    time_t apparent_time = time(NULL) + simulated_clock_offset_seconds;
+    struct tm apparent_utc;
+    char timestamp[32];
+    gmtime_r(&apparent_time, &apparent_utc);
+    strftime(timestamp, sizeof(timestamp), "%Y-%m-%dT%H:%M:%SZ", &apparent_utc);
+
+    printf("System %d (rank %d on %s): simulated UTC time %s (offset %+d seconds).\n",
+           rank + 1, rank, processor_name, timestamp,
+           simulated_clock_offset_seconds);
+    fflush(stdout);
 
     if (rank == SYSTEM_1_RANK) {
         int readings[VALUE_COUNT] = {12, 8, 21, 5, 16, 9, 14, 7};

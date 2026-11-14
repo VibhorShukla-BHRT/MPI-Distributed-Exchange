@@ -1,0 +1,15 @@
+MPI Docker demo -- verified execution result
+Started (UTC): 2026-11-14T13:56:10Z
+Docker Engine: 29.7.1
+
+Command:
+./run-demo.sh
+
+Result:
+System 1 (rank 0 on system1): simulated UTC time 2026-11-14T13:51:13Z (offset -300 seconds).
+System 1 (rank 0 on system1): sending 8 readings to System 2.
+System 2 (rank 1 on system2): simulated UTC time 2026-11-14T13:59:13Z (offset +180 seconds).
+System 1: received total = 92 from System 2.
+System 2 (rank 1 on system2): received readings; computed total = 92.
+
+Verification: PASS -- System 2 computed 92 and System 1 received 92.

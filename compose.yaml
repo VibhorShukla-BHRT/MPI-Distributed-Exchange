@@ -1,0 +1,8 @@
+services:
+  system1:
+    build: .
+    hostname: system1
+
+  system2:
+    build: .
+    hostname: system2
