@@ -6,7 +6,7 @@ Roll Number: 23115107</br>
 Programme: CSE, Semester 7</br>
 Institute: NIT Raipur</br>
 Subject: Distributed System
-
+Project Link: [GitHub](https://github.com/VibhorShukla-BHRT/MPI-Distributed-Exchange)
 ## 1. Assignment objective
 
 This project demonstrates data exchange between two computer systems using the
